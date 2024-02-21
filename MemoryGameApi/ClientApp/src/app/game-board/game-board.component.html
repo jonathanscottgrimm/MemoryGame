@@ -1,0 +1,20 @@
+<div *ngIf="game" class="game-board">
+  <p>Player 1 Score: {{ game.player1Score }}</p>
+  <p>Player 2 Score: {{ game.player2Score }}</p>
+  <p>Current Turn: Player {{ game.currentPlayer }}</p>
+  <div class="cards-container">
+    <ng-container *ngFor="let card of game.cards; let i = index">
+      <div
+        class="card"
+        [class.flipped]="card.isFlipped"
+        [class.matched]="card.isMatched"
+        (click)="onCardClick(i)"
+        *ngIf="!card.isMatched"
+      >
+        <!-- Only display cards that haven't been matched -->
+        {{ card.isFlipped ? card.value : "Card" }}
+      </div>
+    </ng-container>
+  </div>
+  <button (click)="startNewGame()">Start New Game</button>
+</div>

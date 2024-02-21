@@ -1,0 +1,27 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card {
+  cursor: pointer;
+  width: 100px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}
+
+.card.flipped,
+.card.matched {
+  background-color: #e0e0e0;
+}
+
+/* Additional styling for matched cards if needed */
+.card.matched {
+  visibility: hidden; /* or another style to indicate a match */
+}
